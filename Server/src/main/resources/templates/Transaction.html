@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/demo.css" type="text/css" rel="stylesheet"/>
+    <title>Transactie</title>
+</head>
+<body>
+<div class="background">
+    <h1>Overmaken</h1>
+    <form th:action="@{transactionConfirmation}" th:object="${Transaction}" method="post">
+
+        <div>Van rekening:
+            <input type="text" name="accountId" readonly="readonly" th:value="${accountId}">
+            Op naam:
+            <input type="text" name="name" readonly="readonly" th:value="${name}"></div>
+        <div>Naar rekening:
+            <input type="text" name="toAccountId" placeholder="Rekening ontvanger">
+            Op naam:
+            <input type="text" name="toAccountName" placeholder="naam ontvanger"></div>
+        <div>Bedrag:
+            <input type="text" name="amount"></div>
+        <div>Omschrijving:
+            <input type="text" name="description"></div>
+        <br>
+        <form action="/transactionConfirmation">
+            <input class="button" type="submit" value="transactie voltooien"/>
+        </form>
+
+
+    </form>
+    <br>
+    <form action="overviewWithName">
+        <input class="button" type="submit" value="terug naar overzicht"/>
+    </form>
+</div>
+</body>
+</html>

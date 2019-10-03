@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/demo.css" type="text/css" rel="stylesheet"/>
+    <title>Bevestiging</title>
+</head>
+<body>
+<div class="background">
+    <h1>Beste <span th:text="${name}"/></h1>
+    <h2>Het aanmaken van een rekening is geslaagd</h2>
+    <p>Je nieuwe rekening heeft rekeningnummer: <span th:text="${accountId}"/></p>
+    <br>
+    <br>
+    <form action="login">
+        <input class="button" type="submit" value="terug naar Login"/>
+    </form>
+    <br>
+    <form action="overviewWithName">
+        <input class="button" type="submit" value="terug naar overzicht"/>
+    </form>
+</div>
+</body>
+</html>

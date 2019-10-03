@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Toevoegen rekeninghouder geslaags</title>
+</head>
+<body>
+<h1>Het toevoegen van een nieuwe rekeninghouder is gelukt!</h1>
+<br>
+<h2>Aangevraagd door <span th:text="${name}"/> voor rekeningnummer <span th:text="${accountId}"/>.</h2>
+<h3>Informeer <span th:text="${newAccountHolder}"/> over het koppelen van de rekening met de beveiligingscode: <span th:text="${securityCode}"/></h3>
+<br>
+<form action="overviewWithName">
+    <input class="button" type="submit" value="Terug naar overzicht"/>
+</form>
+<br>
+<form action="login">
+    <input class="button" type="submit" value="Terug naar login"/>
+</form>
+
+</body>
+</html>

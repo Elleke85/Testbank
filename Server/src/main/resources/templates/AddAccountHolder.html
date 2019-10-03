@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Rekeninghouder toevoegen</title>
+</head>
+<body>
+<div class="background">
+    <h1>Toevoegen nieuwe rekeninghouder</h1>
+    <br>
+    <h3>U bent ingelogd als <span th:text="${name}"/></h3>
+    <br>
+    <h2>Huidige rekeninghouders van rekening <span th:text="${accountId}"/></h2>
+    <div th:unless="${#lists.isEmpty(accountHolders)}">
+        <table  align="center">
+            <tr>
+                <td>KlantId:</td>
+                <td>KlantNaam:</td>
+            </tr>
+            <tr th:each="accountHolder : ${accountHolders}">
+                <td><span th:text="${accountHolder.customerId}"/></td>
+                <td><span th:text="${accountHolder.name}"/></td>
+                </form>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <h2>Toevoegen nieuwe rekeninghouder:</h2>
+    <form th:action="@{addAccountHolderConfirmation}" th:object="${Account}" method="post">
+        <div>Gebruikersnaam nieuwe rekeninghouder:
+            <input type="text" name="nameNewAccountHolder" placeholder="gebruikersnaam">
+            Beveiligingscode (5-cijfers)
+            <input type="text" name="securityCode" placeholder="beveiligingscode"></div>
+        <br>
+        <form action="addAccountHolderConfirmation">
+            <input class="button" type="submit" value="toevoegen nieuwe rekeninghouder"/>
+        </form>
+    </form>
+
+
+</div>
+</body>
+</html>

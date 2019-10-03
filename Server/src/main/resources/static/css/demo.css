@@ -1,0 +1,27 @@
+/*class*/
+.background {background-color: #E6FFE6; text-align: center}
+
+.button {
+    background-color: #004d00;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50%;
+    button-width: 50%;
+}
+
+
+
+/*elementen*/
+body {text-align: center}
+form {background-color: #e6ffe6}
+
+
+
+

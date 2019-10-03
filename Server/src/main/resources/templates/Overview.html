@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/demo.css" type="text/css" rel="stylesheet"/>
+    <title>Overzicht</title>
+</head>
+<body>
+<div class="background">
+    <h1>Rekeningoverzicht van <span th:text="${name}"/></h1>
+
+    <br>
+    <h2>Maak account aan:</h2>
+    <form th:action="@{openAccountConfirmation}" th:object="${Account}" method="post">
+        <input class="button" type="submit" value="OpenAccount">
+    </form>
+    <br>
+    <br>
+    <h2>Overzicht accounts:</h2>
+    <div th:unless="${#lists.isEmpty(accounts)}">
+        <table align="center">
+            <tr>
+                <td>Rekeningnummer:</td>
+                <td>Saldo:</td>
+            </tr>
+            <tr th:each="account : ${accounts}">
+                <td><a th:href="@{accountSummary(accountId=${account.accountId})}"><span
+                        th:text="${account.accountId}"/></td>
+                <td>&euro;<span th:text="${#numbers.formatDecimal(account.balance, 0, 'POINT', 2, 'COMMA')}"/></td>
+                </form>
+            </tr>
+        </table>
+        <br>
+        <br>
+        <form action="/">
+            <input class="button" type="submit" value="Terug naar startpagina"/>
+        </form>
+    </div>
+</div>
+</body>
+</html>
